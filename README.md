@@ -10,17 +10,26 @@ Connection:
   - PORT
   - TYPE (HIVE, IMPALA, PRESTO, etc)
   - OPTIONS
+  
 Service_User:
   - USERNAME
   - PASSWORD
   - CONNECTION
+  
 Job:
   - REPO_URL
   - REPO_PATH
   - (other configuration?)
+  
 Schedule:
   - CRON
   - (Maybe this should be part of a job? Or keep schedules and jobs seperate?)
+
+User:
+  - Username
+  - Password
+  - Type
+  - 
 
 ## Stories
  What are some of the ideas for this application?
@@ -29,6 +38,7 @@ Schedule:
     - Login
     - Create 'connection'
     - Create 'service_user'
+    
   - Users:
     - Login
     - Create 'job'
