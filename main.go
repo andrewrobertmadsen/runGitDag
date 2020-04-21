@@ -7,9 +7,11 @@ import (
 
 func main() {
 	router := gin.Default()
-
+	router.LoadHTMLGlob("resources/templates/*")
 	router.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hey there, Casey! I think we should try gin for our v1 of runGitDag. What do you think?")
+		c.HTML(http.StatusOK, "index.tmpl", gin.H{
+			"title":"This is Amazing!",
+		})
 	})
 
 	router.Run(":3333")
