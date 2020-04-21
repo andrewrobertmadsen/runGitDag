@@ -8,9 +8,9 @@ type Connection struct {
 
 type ConnectionType string
 
-const(
-	Hive ConnectionType = "Hive"
-	Impala = "Impala"
-	Presto = "Presto"
-	SparkSql = "SparkSql"
+const (
+	Hive     ConnectionType = "Hive"
+	Impala                  = "Impala"
+	Presto                  = "Presto"
+	SparkSql                = "SparkSql"
 )

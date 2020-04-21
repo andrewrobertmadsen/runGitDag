@@ -1,7 +1,7 @@
 package main
 
 type ServiceUser struct {
-	UserName string
-	Password string
+	UserName   string
+	Password   string
 	Connection Connection
 }
