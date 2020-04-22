@@ -1,18 +1,12 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-	"net/http"
+	"runGitDag/routers"
 )
 
 func main() {
-	router := gin.Default()
-	router.LoadHTMLGlob("resources/templates/*")
-	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl", gin.H{
-			"title": "This is Amazing!",
-		})
-	})
-
-	router.Run(":3333")
+	//gin.SetMode("release")
+	router := routers.InitRouter()
+	endPoint := ":3333"
+	router.Run(endPoint)
 }
