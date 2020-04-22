@@ -6,14 +6,12 @@ import (
 )
 
 func InitRouter() *gin.Engine {
-	r := gin.New()
-	r.Use(gin.Logger())
-	r.Use(gin.Recovery())
+	r := gin.Default()
 
-	r.POST("/connections", models.Connection.CreateConnection())
-	r.GET("/connections", models.Connection.GetConnections())
-	r.POST("/jobs", models.Job.CreateJob())
-	r.GET("/jobs", models.Job.GetJobs())
+	r.POST("/connections", models.CreateConnection)
+	r.GET("/connections", models.GetConnections)
+	r.POST("/jobs", models.CreateJob)
+	r.GET("/jobs", models.GetJobs)
 
 	return r
 }
