@@ -1,0 +1,4 @@
+{
+ "RepoUrl": "repo",
+ "RepoPath": "path/in/repo"
+}

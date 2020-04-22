@@ -10,7 +10,7 @@ func main() {
 	router.LoadHTMLGlob("resources/templates/*")
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{
-			"title":"This is Amazing!",
+			"title": "This is Amazing!",
 		})
 	})
 
