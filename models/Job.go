@@ -12,7 +12,7 @@ type Job struct {
 
 func (j Job) SaveJob(writer io.Writer) (err error) {
 	w := bufio.NewWriter(writer)
-	w.WriteString(" world!")
+	_, err = w.WriteString(" world!")
 	w.Flush()
 	return
 }

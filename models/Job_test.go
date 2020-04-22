@@ -8,7 +8,10 @@ import (
 func TestSaveJob(t *testing.T) {
 	testJob := Job{"this is a repo url", "path/in/repo"}
 	buf := bytes.NewBufferString("Hello")
-	testJob.SaveJob(buf)
+	err := testJob.SaveJob(buf)
+	if err != nil {
+		t.Fail()
+	}
 	got := buf.String()
 	want := "Hello world!"
 
