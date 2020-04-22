@@ -1,14 +1,18 @@
 package models
 
-import "io"
+import (
+	"bufio"
+	"io"
+)
 
 type Job struct {
-	RepoUrl   string
-	RepoPath   string
+	RepoUrl  string
+	RepoPath string
 }
 
 func (j Job) SaveJob(writer io.Writer) (err error) {
-	writer.Write("hello")
-
+	w := bufio.NewWriter(writer)
+	w.WriteString(" world!")
+	w.Flush()
 	return
 }

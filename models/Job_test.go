@@ -2,20 +2,17 @@ package models
 
 import (
 	"bytes"
-	"io"
 	"testing"
 )
 
 func TestSaveJob(t *testing.T) {
-	test_job := Job{"this is a repo url", "path/in/repo"}
-	var buf bytes.Buffer
-	writer := io.Writer(&buf)
-	test_job.SaveJob(writer)
+	testJob := Job{"this is a repo url", "path/in/repo"}
+	buf := bytes.NewBufferString("Hello")
+	testJob.SaveJob(buf)
 	got := buf.String()
-	want := "Hello"
+	want := "Hello world!"
 
 	if got != want {
 		t.Errorf("Got %q, want %q", got, want)
 	}
-
 }
