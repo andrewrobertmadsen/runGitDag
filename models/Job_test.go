@@ -21,7 +21,7 @@ func TestWriteJob(t *testing.T) {
 }
 
 func TestParseJob(t *testing.T) {
-	x := []byte("{\n \"RepoUrl\": \"url\",\n \"RepoPath\": \"path\"\n}")
+	x := []byte("{\"RepoUrl\": \"url\",\"RepoPath\": \"path\"}")
 	got, err := ParseJob(x)
 	want := Job{"url", "path"}
 	if err != nil {
