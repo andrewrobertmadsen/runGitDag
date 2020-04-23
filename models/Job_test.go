@@ -19,3 +19,15 @@ func TestWriteJob(t *testing.T) {
 		t.Errorf("Got %q, want %q", got, want)
 	}
 }
+
+func TestParseJob(t *testing.T) {
+	x := []byte("{\n \"RepoUrl\": \"url\",\n \"RepoPath\": \"path\"\n}")
+	got, err := ParseJob(x)
+	want := Job{"url", "path"}
+	if err != nil {
+		t.Fail()
+	}
+	if got != want {
+		t.Errorf("Got %q, want %q", got, want)
+	}
+}

@@ -9,6 +9,10 @@ import (
 	"os"
 )
 
+type JobNodes struct {
+	JobNodes []Job
+}
+
 type Job struct {
 	RepoUrl  string
 	RepoPath string
@@ -29,9 +33,15 @@ func (j Job) PersistJob() (err error) {
 	return
 }
 
-func CreateJob (c *gin.Context) {
+func CreateJob(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Good Job! you created a Job (not really)"})
 }
-func GetJobs (c *gin.Context) {
+func GetJobs(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Here is a list of Jobs (not really)"})
+}
+
+func ParseJob(x []byte) (data Job, err error) {
+	data = Job{}
+	err = json.Unmarshal(x, &data)
+	return
 }
