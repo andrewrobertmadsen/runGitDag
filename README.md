@@ -6,33 +6,17 @@ scientists to have more freedom and velocity by decoupling their work from data 
 ## Features
 
 Connection:
-  - HOST
-  - PORT
-  - TYPE (HIVE, IMPALA, PRESTO, etc)
-  - OPTIONS
   
 Service_User:
-  - USERNAME
-  - PASSWORD
-  - CONNECTION
   
 Job:
-  - REPO_URL
-  - REPO_PATH
-  - (other configuration?)
   
 Schedule:
-  - CRON
-  - (Maybe this should be part of a job? Or keep schedules and jobs seperate?)
 
 User:
-  - Username
-  - Password
-  - Type
-  - 
 
 ## Stories
- What are some of the ideas for this application?
+ What are some ideas for this application?
  
   - Admin:
     - Login

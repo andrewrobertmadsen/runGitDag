@@ -1,9 +1,10 @@
 package models
 
 type User struct {
-	Username string
+	Id       int    `gorm:"AUTO_INCREMENT" form:"id" json:"id"`
+	Username string `gorm:"not null" form:"username" json:"username"`
 	Password string
-	Type     UserType
+	Type     UserType `gorm:"default:Regular"`
 }
 
 type UserType string
