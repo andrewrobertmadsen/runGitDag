@@ -13,3 +13,9 @@ const (
 	Admin   UserType = "Admin"
 	Regular UserType = "Regular"
 )
+
+func CreateUser() {
+	// Thinking about putting the create inside the model instead of the api
+	// seems more logical for the persist user to go here.
+	// Not sure how that will look exactly though...
+}
